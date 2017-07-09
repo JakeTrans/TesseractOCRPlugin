@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesseractOCRPlugin", "TesseractOCRPlugin\TesseractOCRPlugin.csproj", "{0FF83D70-BF83-404D-9BE3-0BFFF7E004EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesseractPluginTest", "TesseractPluginTest\TesseractPluginTest.csproj", "{AC67AD28-0356-4EF1-AD73-500E9A72AB9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FF83D70-BF83-404D-9BE3-0BFFF7E004EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF83D70-BF83-404D-9BE3-0BFFF7E004EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF83D70-BF83-404D-9BE3-0BFFF7E004EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF83D70-BF83-404D-9BE3-0BFFF7E004EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC67AD28-0356-4EF1-AD73-500E9A72AB9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC67AD28-0356-4EF1-AD73-500E9A72AB9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC67AD28-0356-4EF1-AD73-500E9A72AB9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC67AD28-0356-4EF1-AD73-500E9A72AB9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://jakedamner.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TesseractOCRPlugin\\TesseractOCRPlugin.csproj
+		SccProjectName1 = TesseractOCRPlugin
+		SccLocalPath1 = TesseractOCRPlugin
+		SccProjectUniqueName2 = TesseractPluginTest\\TesseractPluginTest.csproj
+		SccProjectName2 = TesseractPluginTest
+		SccLocalPath2 = TesseractPluginTest
+	EndGlobalSection
+EndGlobal
