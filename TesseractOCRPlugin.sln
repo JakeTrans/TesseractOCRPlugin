@@ -25,16 +25,4 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://jakedamner.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = TesseractOCRPlugin\\TesseractOCRPlugin.csproj
-		SccProjectName1 = TesseractOCRPlugin
-		SccLocalPath1 = TesseractOCRPlugin
-		SccProjectUniqueName2 = TesseractPluginTest\\TesseractPluginTest.csproj
-		SccProjectName2 = TesseractPluginTest
-		SccLocalPath2 = TesseractPluginTest
-	EndGlobalSection
 EndGlobal
