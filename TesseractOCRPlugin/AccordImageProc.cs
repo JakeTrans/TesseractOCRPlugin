@@ -4,7 +4,7 @@ using System.Drawing;
 using Accord.Imaging.Filters;
 namespace AccordImageProcessing
 {
-    static class clsAccordImageProc
+    static class AccordImageProc
     {
         private static Bitmap Grayscaleimage(Bitmap image)
         {

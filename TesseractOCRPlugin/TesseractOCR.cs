@@ -157,7 +157,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(imagelocation);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
             //Random rnd = new Random();
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
@@ -175,7 +175,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(ImageToUse);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -194,7 +194,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(imagelocation);
             //post process the image
-            ImageToOCR =  AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
+            ImageToOCR =  AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -211,7 +211,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(ImageToUse);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -230,7 +230,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(imagelocation);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -247,7 +247,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(ImageToUse);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -264,7 +264,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(imagelocation);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -281,7 +281,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(ImageToUse);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -301,7 +301,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(imagelocation);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -321,7 +321,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(ImageToUse);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -341,7 +341,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(imagelocation);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -361,7 +361,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(ImageToUse);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -384,7 +384,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(imagelocation);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -407,7 +407,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(ImageToUse);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -430,7 +430,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(imagelocation);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -453,7 +453,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(ImageToUse);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
@@ -513,7 +513,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(ImageToUse);
             //post process the image
-            ImageToOCR = AccordImageProcessing.clsAccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
+            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
             var img = PixConverter.ToPix(ImageToOCR);
             // OCR it
