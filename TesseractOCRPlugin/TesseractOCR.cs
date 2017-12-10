@@ -21,7 +21,9 @@ namespace TesseractOCRPlugin
 
 
 
-
+        /// <summary>
+        /// Quality level of the Tesseract Process
+        /// </summary>
         public enum Quality
         {
             Low,
@@ -41,7 +43,7 @@ namespace TesseractOCRPlugin
         public TesseractOCR(string LanguageCode,Quality Qualitylevel)
         {
 
-            //Build ocr object upfront this minimises time to load for muliple OCR jobs
+            //Build OCR object upfront this minimises time to load for muliple OCR jobs
             Tessdatapath = (Path.GetDirectoryName(Assembly.GetAssembly(GetType()).CodeBase) + @"\Tessdata").Replace("file:\\", "");
             x86path = (Path.GetDirectoryName(Assembly.GetAssembly(GetType()).CodeBase) + @"\x86").Replace("file:\\", "");
             x64path = (Path.GetDirectoryName(Assembly.GetAssembly(GetType()).CodeBase) + @"\x64").Replace("file:\\", "");
@@ -80,13 +82,6 @@ namespace TesseractOCRPlugin
             So I thought in would be best to check the x86, x64 and Tessdata files are where they should 
             be
             */
-
-
-
-
-
-
-
 
             if (Directory.Exists(Tessdatapath) == false)
             { 
