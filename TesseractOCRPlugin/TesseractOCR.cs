@@ -149,274 +149,85 @@ namespace TesseractOCRPlugin
         #region OCRImage Overloads
         public string OCRimage(string imagelocation)
         {
-            //load in image
-            LoadImage(imagelocation);
-            //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
-            //Random rnd = new Random();
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
-            img.Dispose();
-            page.Dispose();
-            return text;
-            //return "";
+            double TimeTaken;
+            float Confidence;
+            return OCRimage(imagelocation, 1, out TimeTaken, out Confidence);
         }
         public string OCRimage(Image ImageToUse)
         {
-            //load in image
-            LoadImage(ImageToUse);
-            //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
-            img.Dispose();
-            page.Dispose();
-            return text;
-            //return "";
+            double TimeTaken;
+            float Confidence;
+            return OCRimage(ImageToUse, 1, out TimeTaken, out Confidence);
         }
 
 
         public string OCRimage(string imagelocation, int Zoomlevel)
         {
-            //load in image
-            LoadImage(imagelocation);
-            //post process the image
-            ImageToOCR =  AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
-            img.Dispose();
-            page.Dispose();
-            return text;
-            //return "";
+            double TimeTaken;
+            float Confidence;
+            return OCRimage(imagelocation, Zoomlevel, out TimeTaken, out Confidence);
         }
         public string OCRimage(Image ImageToUse, int Zoomlevel)
         {
-            //load in image
-            LoadImage(ImageToUse);
-            //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
-            img.Dispose();
-            page.Dispose();
-            return text;
-            //return "";
+            double TimeTaken;
+            float Confidence;
+            return OCRimage(ImageToUse, Zoomlevel, out TimeTaken, out Confidence);
         }
 
 
         public string OCRimage(string imagelocation, out float Confidence)
         {
-            //load in image
-            LoadImage(imagelocation);
-            //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
-            //Get confidence
-            Confidence = page.GetMeanConfidence();
-            return text;
-            //return "";
+            double TimeTaken;
+            return OCRimage(imagelocation, 1, out TimeTaken, out Confidence);
         }
         public string OCRimage(Image ImageToUse, out float Confidence)
         {
-            //load in image
-            LoadImage(ImageToUse);
-            //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
-            //Get confidence
-            Confidence = page.GetMeanConfidence();
-            return text;
-            //return "";
+            double TimeTaken;
+            return OCRimage(ImageToUse, 1, out TimeTaken, out Confidence);
         }
         public string OCRimage(string imagelocation, int Zoomlevel, out float Confidence)
         {
-            //load in image
-            LoadImage(imagelocation);
-            //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
-            //Get confidence
-            Confidence = page.GetMeanConfidence();
-            return text;
-            //return "";
+            double TimeTaken;
+            return OCRimage(imagelocation, Zoomlevel, out TimeTaken, out Confidence);
         }
         public string OCRimage(Image ImageToUse, int Zoomlevel, out float Confidence)
         {
-            //load in image
-            LoadImage(ImageToUse);
-            //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
-            //Get confidence
-            Confidence = page.GetMeanConfidence();
-            return text;
-            //return "";
+
+            double TimeTaken;
+            return OCRimage(ImageToUse, Zoomlevel, out TimeTaken, out Confidence);
         }
 
         public string OCRimage(string imagelocation, out double TimeTaken)
         {
-            DateTime Starttime = DateTime.Now;
-            
-            //load in image
-            LoadImage(imagelocation);
-            //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
-            //Get Time
-            DateTime EndTime = DateTime.Now;
-            TimeTaken = (EndTime - Starttime).TotalSeconds;
-            return text;
-            //return "";
+            float Confidence;
+            return OCRimage(imagelocation, 1, out TimeTaken, out Confidence);
         }
         public string OCRimage(Image ImageToUse, out double TimeTaken)
         {
-            DateTime Starttime = DateTime.Now;
-
-            //load in image
-            LoadImage(ImageToUse);
-            //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
-            //Get Time
-            DateTime EndTime = DateTime.Now;
-            TimeTaken = (EndTime - Starttime).TotalSeconds;
-            return text;
+            float Confidence;
+            return OCRimage(ImageToUse, 1, out TimeTaken, out Confidence);
             //return "";
         }
         public string OCRimage(string imagelocation, int Zoomlevel, out double TimeTaken)
         {
-            DateTime Starttime = DateTime.Now;
-
-            //load in image
-            LoadImage(imagelocation);
-            //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
-            //Get Time
-            DateTime EndTime = DateTime.Now;
-            TimeTaken = (EndTime - Starttime).TotalSeconds;
-            return text;
-            //return "";
+            float Confidence;
+            return OCRimage(imagelocation, Zoomlevel, out TimeTaken, out Confidence);
         }
         public string OCRimage(Image ImageToUse, int Zoomlevel, out double TimeTaken)
         {
-            DateTime Starttime = DateTime.Now;
-
-            //load in image
-            LoadImage(ImageToUse);
-            //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
-            //Get Time
-            DateTime EndTime = DateTime.Now;
-            TimeTaken = (EndTime - Starttime).TotalSeconds;
-            return text;
-            //return "";
+            float Confidence;
+            return OCRimage(ImageToUse, Zoomlevel, out TimeTaken, out Confidence);
         }
-
-
-
         public string OCRimage(string imagelocation, out double TimeTaken, out float Confidence)
         {
-            DateTime Starttime = DateTime.Now;
-
-            //load in image
-            LoadImage(imagelocation);
-            //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
-
-            //Get confidence
-            Confidence = page.GetMeanConfidence();
-            //Get Time
-            DateTime EndTime = DateTime.Now;
-            TimeTaken = (EndTime - Starttime).TotalSeconds;
-            return text;
-            //return "";
+            return OCRimage(imagelocation, 1, out TimeTaken, out Confidence);
         }
+
+
+
         public string OCRimage(Image ImageToUse, out double TimeTaken, out float Confidence)
         {
-            DateTime Starttime = DateTime.Now;
-
-            //load in image
-            LoadImage(ImageToUse);
-            //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR);
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
-
-            //Get confidence
-            Confidence = page.GetMeanConfidence();
-            //Get Time
-            DateTime EndTime = DateTime.Now;
-            TimeTaken = (EndTime - Starttime).TotalSeconds;
-            return text;
-            //return "";
+            return  OCRimage(ImageToUse, 1, out TimeTaken,  out Confidence);
         }
         public string OCRimage(string imagelocation, int Zoomlevel, out double TimeTaken, out float Confidence)
         {
