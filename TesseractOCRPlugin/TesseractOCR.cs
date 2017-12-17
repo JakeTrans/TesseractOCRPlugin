@@ -103,42 +103,12 @@ namespace TesseractOCRPlugin
 
         }
 
-        #region Load image overloads
-
-        private void  LoadImage (string imagePath)
-        {
-            //Welcome to the bizarre world of GDI+ in C# with new Bitmap everywhere 
-
-            #region The best answer I have
-            /*
-               The most merciful thing in the world, I think, is the inability
-               of the human mind to correlate all its contents. We
-               live on a placid island of ignorance in the midst of black seas
-               of infinity, and it was not meant that we should voyage far. 
-             */
-            #endregion
-
-            Bitmap BitmapToOCR = new Bitmap(new Bitmap (imagePath));
-            BitmapToOCR = BitmapToOCR.Clone(new Rectangle(0, 0, BitmapToOCR.Width, BitmapToOCR.Height), System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-            //Format32bppArgb
-            ImageToOCR = new Bitmap (BitmapToOCR);
-            BitmapToOCR.Dispose();
-        }
+        #region Load image
         private void  LoadImage (Image ImageToUse)
         {
             //Welcome to the bizarre world of GDI+ in C# with new Bitmap everywhere 
-
-            #region The best answer I have
-            /*
-               The most merciful thing in the world, I think, is the inability
-               of the human mind to correlate all its contents. We
-               live on a placid island of ignorance in the midst of black seas
-               of infinity, and it was not meant that we should voyage far. 
-             */
-            #endregion
-
             Bitmap BitmapToOCR = new Bitmap(new Bitmap(ImageToUse));
-            BitmapToOCR = BitmapToOCR.Clone(new Rectangle(0, 0, BitmapToOCR.Width, BitmapToOCR.Height), System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            BitmapToOCR = BitmapToOCR.Clone(new Rectangle(0, 0, BitmapToOCR.Width, BitmapToOCR.Height), System.Drawing.Imaging.PixelFormat.Format32bppArgb); //force type
             //Format32bppArgb
             ImageToOCR = new Bitmap(BitmapToOCR);
             BitmapToOCR.Dispose();
@@ -231,26 +201,10 @@ namespace TesseractOCRPlugin
         }
         public string OCRimage(string imagelocation, int Zoomlevel, out double TimeTaken, out float Confidence)
         {
-            DateTime Starttime = DateTime.Now;
+            Image imagefile = Image.FromFile(imagelocation);
+            return OCRimage(imagefile, Zoomlevel, out TimeTaken, out Confidence);
 
-            //load in image
-            LoadImage(imagelocation);
-            //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
-            //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
-            // OCR it
-            var page = TesseractOCRCore.Process(img);
-            //get test
-            var text = page.GetText();
 
-            //Get confidence
-            Confidence = page.GetMeanConfidence();
-            //Get Time
-            DateTime EndTime = DateTime.Now;
-            TimeTaken = (EndTime - Starttime).TotalSeconds;
-            return text;
-            //return "";
         }
         public string OCRimage(Image ImageToUse, int Zoomlevel, out double TimeTaken, out float Confidence)
         {
