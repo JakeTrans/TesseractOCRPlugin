@@ -47,7 +47,11 @@ namespace AccordImageProcessing
         public static Bitmap ImageProcessing(Bitmap SourceImage, int Zoomlevel)
         {
             SourceImage = Grayscaleimage(SourceImage);
-            SourceImage = Resizeimage(SourceImage, SourceImage.Width * Zoomlevel, SourceImage.Height * Zoomlevel);
+
+            if (Zoomlevel != 1)
+            { 
+                SourceImage = Resizeimage(SourceImage, SourceImage.Width * Zoomlevel, SourceImage.Height * Zoomlevel);
+            }
             SourceImage = Deskewimage(SourceImage);
             SourceImage = Denoiseimage(SourceImage);
             return SourceImage;
