@@ -30,8 +30,10 @@ namespace AccordImageProcessing
             // get documents skew angle
             double angle = skewChecker.GetSkewAngle(image);
             // create rotation filter
-            RotateBilinear rotationFilter = new RotateBilinear(-angle);
-            rotationFilter.FillColor = Color.White;
+            RotateBilinear rotationFilter = new RotateBilinear(-angle)
+            {
+                FillColor = Color.White
+            };
             // rotate image applying the filter
             return rotationFilter.Apply(image);
         }
