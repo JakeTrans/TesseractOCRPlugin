@@ -76,17 +76,17 @@
     <Compile Include="TesseractOCR.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="x86\libtesseract400.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="FodyWeavers.xml" />
-    <Content Include="x64\liblept172.dll">
+    <Content Include="x64\liblept1760.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="x64\libtesseract304.dll">
+    <Content Include="x64\libtesseract400.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="x86\liblept172.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="x86\libtesseract304.dll">
+    <Content Include="x86\liblept1760.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
