@@ -54,19 +54,17 @@ namespace TesseractOCRPlugin
             string FileCheckerResult =TesseractFileChecker();
             if (FileCheckerResult == "True")
             {
-               // Tessdatapath = @"C:\Users\David\Source\Repos\tesseract4.0testing\tesseract4.0testing\bin\Debug\tessdata";
                 switch (Qualitylevel)
                 {
 
                     case Quality.High:
-                        //TesseractOCRCore = new TesseractEngine(Path.GetDirectoryName(Tessdatapath), LanguageCode, EngineMode.TesseractAndLstm);
                         TesseractOCRCore = new TesseractEngine(Tessdatapath, LanguageCode, EngineMode.TesseractAndLstm);
                         break;
                     case Quality.Medium:
-                        TesseractOCRCore = new TesseractEngine(Path.GetDirectoryName(Tessdatapath), LanguageCode, EngineMode.TesseractOnly);
+                        TesseractOCRCore = new TesseractEngine(Tessdatapath, LanguageCode, EngineMode.TesseractOnly);
                         break;
                     case Quality.Low:
-                        TesseractOCRCore = new TesseractEngine(Path.GetDirectoryName(Tessdatapath), LanguageCode, EngineMode.LstmOnly);
+                        TesseractOCRCore = new TesseractEngine(Tessdatapath, LanguageCode, EngineMode.LstmOnly);
                         break;
                 }
                
