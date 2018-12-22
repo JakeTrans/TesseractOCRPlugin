@@ -200,11 +200,11 @@ namespace TesseractOCRPlugin
             //post process the image
             ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
+            Pix img = PixConverter.ToPix(ImageToOCR);
             // OCR it
-            var page = TesseractOCRCore.Process(img);
+            Page page = TesseractOCRCore.Process(img);
             //get test
-            var text = page.GetText();
+            string text = page.GetText();
 
             //Get confidence
             Confidence = page.GetMeanConfidence();
@@ -259,14 +259,14 @@ namespace TesseractOCRPlugin
             //post process the image
             ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
-            var img = PixConverter.ToPix(ImageToOCR);
+            Pix img = PixConverter.ToPix(ImageToOCR);
             // OCR it
-            Tesseract.Page  page = TesseractOCRCore.Process(img);
+            Page  page = TesseractOCRCore.Process(img);
             //get test
 
          
 
-            var text = page.GetHOCRText(1);
+            string text = page.GetHOCRText(1);
             img.Dispose();
             page.Dispose();
             return text;
