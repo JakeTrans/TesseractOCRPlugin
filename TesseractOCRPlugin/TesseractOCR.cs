@@ -211,6 +211,8 @@ namespace TesseractOCRPlugin
             //Get Time
             DateTime EndTime = DateTime.Now;
             TimeTaken = (EndTime - Starttime).TotalSeconds;
+            page.Dispose();
+            img.Dispose();
             return text;
         }
 

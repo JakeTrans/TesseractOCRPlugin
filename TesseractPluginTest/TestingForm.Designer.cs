@@ -57,7 +57,7 @@
             this.btnOCRThis.TabIndex = 2;
             this.btnOCRThis.Text = "OCR This File";
             this.btnOCRThis.UseVisualStyleBackColor = true;
-            this.btnOCRThis.Click += new System.EventHandler(this.btnOCRThis_Click);
+            this.btnOCRThis.Click += new System.EventHandler(this.BtnOCRThis_Click);
             // 
             // TestingForm
             // 
