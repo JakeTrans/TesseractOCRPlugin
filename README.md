@@ -15,13 +15,10 @@ Sample usage
 
 add the dll, Tessdata and x64/x86 folders to your Project and the following will do a OCR of the image set and display the result as a Message Box:
 
-
+```
 Public Void OCRThis(string imagepath)
 {
-
  TesseractOCR TessOCR = new TesseractOCR("eng", TesseractOCR.Quality.High);
-
  MessageBox.Show (TessOCR.OCRimage(imagepath));
-
-
 }
+
