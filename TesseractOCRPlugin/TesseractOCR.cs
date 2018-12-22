@@ -44,7 +44,7 @@ namespace TesseractOCRPlugin
         {
 
             //Build OCR object upfront this minimises time to load for muliple OCR jobs
-            Tessdatapath = (Path.GetDirectoryName(Assembly.GetAssembly(GetType()).CodeBase) + @"\Tessdata").Replace("file:\\", "");
+            Tessdatapath = (Path.GetDirectoryName(Assembly.GetAssembly(GetType()).CodeBase) + @"\tessdata").Replace("file:\\", "");
             x86path = (Path.GetDirectoryName(Assembly.GetAssembly(GetType()).CodeBase) + @"\x86").Replace("file:\\", "");
             x64path = (Path.GetDirectoryName(Assembly.GetAssembly(GetType()).CodeBase) + @"\x64").Replace("file:\\", "");
 
@@ -54,16 +54,19 @@ namespace TesseractOCRPlugin
             string FileCheckerResult =TesseractFileChecker();
             if (FileCheckerResult == "True")
             {
+               // Tessdatapath = @"C:\Users\David\Source\Repos\tesseract4.0testing\tesseract4.0testing\bin\Debug\tessdata";
                 switch (Qualitylevel)
                 {
+
                     case Quality.High:
-                        TesseractOCRCore = new TesseractEngine(Path.GetDirectoryName(Tessdatapath), LanguageCode, EngineMode.TesseractAndCube);
+                        //TesseractOCRCore = new TesseractEngine(Path.GetDirectoryName(Tessdatapath), LanguageCode, EngineMode.TesseractAndLstm);
+                        TesseractOCRCore = new TesseractEngine(Tessdatapath, LanguageCode, EngineMode.TesseractAndLstm);
                         break;
                     case Quality.Medium:
                         TesseractOCRCore = new TesseractEngine(Path.GetDirectoryName(Tessdatapath), LanguageCode, EngineMode.TesseractOnly);
                         break;
                     case Quality.Low:
-                        TesseractOCRCore = new TesseractEngine(Path.GetDirectoryName(Tessdatapath), LanguageCode, EngineMode.CubeOnly);
+                        TesseractOCRCore = new TesseractEngine(Path.GetDirectoryName(Tessdatapath), LanguageCode, EngineMode.LstmOnly);
                         break;
                 }
                
