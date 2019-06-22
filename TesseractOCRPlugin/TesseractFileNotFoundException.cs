@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace TesseractOCRPlugin
 {
-    class TesseractFileNotFoundException : Exception 
+    internal class TesseractFileNotFoundException : Exception
     {
-         public TesseractFileNotFoundException()
-            : base("Files Not Found")
+        public TesseractFileNotFoundException()
+           : base("Files Not Found")
         {
         }
- 
+
         public TesseractFileNotFoundException(string message)
             : base(message)
         {

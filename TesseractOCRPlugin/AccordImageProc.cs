@@ -1,10 +1,10 @@
-﻿
-using Accord.Imaging;
-using System.Drawing;
+﻿using Accord.Imaging;
 using Accord.Imaging.Filters;
+using System.Drawing;
+
 namespace AccordImageProcessing
 {
-    static class AccordImageProc
+    internal static class AccordImageProc
     {
         private static Bitmap Grayscaleimage(Bitmap image)
         {
@@ -18,11 +18,12 @@ namespace AccordImageProcessing
         private static Bitmap Resizeimage(Bitmap image, int NewWidth, int NewHeight)
         {
             //set up filter
-            ResizeBicubic ResizeFilter = new ResizeBicubic(NewWidth,NewHeight) ;
+            ResizeBicubic ResizeFilter = new ResizeBicubic(NewWidth, NewHeight);
             //apply filter
             image = ResizeFilter.Apply(image);
             return image;
         }
+
         private static Bitmap Deskewimage(Bitmap image)
         {
             // create instance of skew checker
@@ -37,6 +38,7 @@ namespace AccordImageProcessing
             // rotate image applying the filter
             return rotationFilter.Apply(image);
         }
+
         private static Bitmap Denoiseimage(Bitmap image)
         {
             // create filter
@@ -51,7 +53,7 @@ namespace AccordImageProcessing
             SourceImage = Grayscaleimage(SourceImage);
 
             if (Zoomlevel != 1)
-            { 
+            {
                 SourceImage = Resizeimage(SourceImage, SourceImage.Width * Zoomlevel, SourceImage.Height * Zoomlevel);
             }
             SourceImage = Deskewimage(SourceImage);
@@ -72,6 +74,5 @@ namespace AccordImageProcessing
             SourceImage = Grayscaleimage(SourceImage);
             return SourceImage;
         }
-
     }
 }
