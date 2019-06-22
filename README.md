@@ -21,5 +21,3 @@ Public Void OCRThis(string imagepath)
  TesseractOCR TessOCR = new TesseractOCR("eng", TesseractOCR.Quality.High);
  MessageBox.Show (TessOCR.OCRimage(imagepath));
 }
-
-
