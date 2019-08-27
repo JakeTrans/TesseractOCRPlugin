@@ -1,7 +1,7 @@
 # TesseractOCRPlugin
 Tesseract OCR (4.00) with Accord Image Processing to improve quality
 
-(the 3.02 version branch is here: https://github.com/JakeTrans/TesseractOCRPlugin/tree/tesseract-3.04-Version)
+(the 3.04 version branch is here: https://github.com/JakeTrans/TesseractOCRPlugin/tree/tesseract-3.04-Version)
 
 This is a implemention of Charles Weld's Tesseract dot.net wrapper https://github.com/charlesw/tesseract along with the Accord .net framework https://github.com/accord-net/framework  to create a OCR engine with automated image enhancement.  
 
