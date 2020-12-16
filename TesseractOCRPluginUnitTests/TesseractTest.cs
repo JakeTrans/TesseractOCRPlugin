@@ -1,14 +1,16 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using TesseractOCRPlugin;
 
 namespace TesseractOCRPluginUnitTests
 {
     [TestClass]
-    public class UnitTest1
+    public class TesseractTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void InitTest()
         {
+            TesseractOCR TessOCR = new TesseractOCR("eng", TesseractOCR.Quality.High);
         }
     }
 }
