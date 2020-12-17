@@ -1,5 +1,3 @@
-https://dev.azure.com/JTGithubBuildPipeline/TesseractPluginMasterBuild/_apis/build/status/JakeTrans.TesseractOCRPlugin?branchName=master
-
 # TesseractOCRPlugin
 Tesseract OCR (4.00) with Accord Image Processing to improve quality
 
