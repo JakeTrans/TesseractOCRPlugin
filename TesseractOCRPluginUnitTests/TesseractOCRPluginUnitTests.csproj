@@ -47,6 +47,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TesseractTest.cs" />
@@ -62,7 +63,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\text.jpg" />
+    <Content Include="Images\testocr.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\text.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
