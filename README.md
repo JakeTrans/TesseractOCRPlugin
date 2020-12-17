@@ -1,4 +1,7 @@
 # TesseractOCRPlugin
+
+[![Build Status](https://dev.azure.com/JTGithubBuildPipeline/TesseractPluginMasterBuild/_apis/build/status/JakeTrans.TesseractOCRPlugin?branchName=master)](https://dev.azure.com/JTGithubBuildPipeline/TesseractPluginMasterBuild/_build/latest?definitionId=10&branchName=master)
+
 Tesseract OCR (4.00) with Accord Image Processing to improve quality
 
 (the 3.04 version branch is here: https://github.com/JakeTrans/TesseractOCRPlugin/tree/tesseract-3.04-Version)
