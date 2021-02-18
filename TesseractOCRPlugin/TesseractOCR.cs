@@ -103,82 +103,31 @@ namespace TesseractOCRPlugin
 
         public string OCRimage(string imagelocation)
         {
-            return OCRimage(imagelocation, 1, out double TimeTaken, out float Confidence);
+            return OCRimage(imagelocation, 1, 0, 0);
         }
 
         public string OCRimage(Image ImageToUse)
         {
-            return OCRimage(ImageToUse, 1, out double TimeTaken, out float Confidence);
+            return OCRimage(ImageToUse, 1, 0, 0);
         }
 
         public string OCRimage(string imagelocation, int Zoomlevel)
         {
-            return OCRimage(imagelocation, Zoomlevel, out double TimeTaken, out float Confidence);
+            return OCRimage(imagelocation, Zoomlevel, 0, 0);
         }
 
         public string OCRimage(Image ImageToUse, int Zoomlevel)
         {
-            return OCRimage(ImageToUse, Zoomlevel, out double TimeTaken, out float Confidence);
+            return OCRimage(ImageToUse, Zoomlevel, 0, 0);
         }
 
-        public string OCRimage(string imagelocation, out float Confidence)
-        {
-            return OCRimage(imagelocation, 1, out double TimeTaken, out Confidence);
-        }
-
-        public string OCRimage(Image ImageToUse, out float Confidence)
-        {
-            return OCRimage(ImageToUse, 1, out double TimeTaken, out Confidence);
-        }
-
-        public string OCRimage(string imagelocation, int Zoomlevel, out float Confidence)
-        {
-            return OCRimage(imagelocation, Zoomlevel, out double TimeTaken, out Confidence);
-        }
-
-        public string OCRimage(Image ImageToUse, int Zoomlevel, out float Confidence)
-        {
-            return OCRimage(ImageToUse, Zoomlevel, out double TimeTaken, out Confidence);
-        }
-
-        public string OCRimage(string imagelocation, out double TimeTaken)
-        {
-            return OCRimage(imagelocation, 1, out TimeTaken, out float Confidence);
-        }
-
-        public string OCRimage(Image ImageToUse, out double TimeTaken)
-        {
-            return OCRimage(ImageToUse, 1, out TimeTaken, out float Confidence);
-            //return "";
-        }
-
-        public string OCRimage(string imagelocation, int Zoomlevel, out double TimeTaken)
-        {
-            return OCRimage(imagelocation, Zoomlevel, out TimeTaken, out float Confidence);
-        }
-
-        public string OCRimage(Image ImageToUse, int Zoomlevel, out double TimeTaken)
-        {
-            return OCRimage(ImageToUse, Zoomlevel, out TimeTaken, out float Confidence);
-        }
-
-        public string OCRimage(string imagelocation, out double TimeTaken, out float Confidence)
-        {
-            return OCRimage(imagelocation, 1, out TimeTaken, out Confidence);
-        }
-
-        public string OCRimage(Image ImageToUse, out double TimeTaken, out float Confidence)
-        {
-            return OCRimage(ImageToUse, 1, out TimeTaken, out Confidence);
-        }
-
-        public string OCRimage(string imagelocation, int Zoomlevel, out double TimeTaken, out float Confidence)
+        public string OCRimage(string imagelocation, int Zoomlevel, double TimeTaken, float Confidence)
         {
             Image imagefile = Image.FromFile(imagelocation);
-            return OCRimage(imagefile, Zoomlevel, out TimeTaken, out Confidence);
+            return OCRimage(imagefile, Zoomlevel, TimeTaken, Confidence);
         }
 
-        public string OCRimage(Image ImageToUse, int Zoomlevel, out double TimeTaken, out float Confidence)
+        public string OCRimage(Image ImageToUse, int Zoomlevel, double TimeTaken, float Confidence)
         {
             DateTime Starttime = DateTime.Now;
 
