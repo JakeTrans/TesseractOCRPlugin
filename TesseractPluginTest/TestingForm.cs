@@ -16,7 +16,7 @@ namespace TesseractPluginTest
 
         private void BtnOCRThis_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(TessOCR.OCRimage(txtPathToOCR.Text));
+            MessageBox.Show(TessOCR.OCRimage(txtPathToOCR.Text).OCRResult);
         }
     }
 }
