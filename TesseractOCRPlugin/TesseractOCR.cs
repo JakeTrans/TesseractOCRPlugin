@@ -103,7 +103,7 @@ namespace TesseractOCRPlugin
 
         public TesseractOCRResult OCRimage(string imagelocation)
         {
-            return OCRimage(imagelocation, 1);
+            return OCRimage(Image.FromFile(imagelocation), 1);
         }
 
         public TesseractOCRResult OCRimage(Image ImageToUse)
@@ -113,7 +113,7 @@ namespace TesseractOCRPlugin
 
         public TesseractOCRResult OCRimage(string imagelocation, int Zoomlevel)
         {
-            return OCRimage(imagelocation, Zoomlevel);
+            return OCRimage(Image.FromFile(imagelocation), Zoomlevel);
         }
 
         public TesseractOCRResult OCRimage(Image ImageToUse, int Zoomlevel)
