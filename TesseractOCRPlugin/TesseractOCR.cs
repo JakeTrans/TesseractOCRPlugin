@@ -101,84 +101,22 @@ namespace TesseractOCRPlugin
 
         #region OCRImage Overloads
 
-        public string OCRimage(string imagelocation)
+        public TesseractOCRResult OCRimage(string imagelocation)
         {
-            return OCRimage(imagelocation, 1, out double TimeTaken, out float Confidence);
+            return OCRimage(Image.FromFile(imagelocation), 1);
         }
 
-        public string OCRimage(Image ImageToUse)
+        public TesseractOCRResult OCRimage(Image ImageToUse)
         {
-            return OCRimage(ImageToUse, 1, out double TimeTaken, out float Confidence);
+            return OCRimage(ImageToUse, 1);
         }
 
-        public string OCRimage(string imagelocation, int Zoomlevel)
+        public TesseractOCRResult OCRimage(string imagelocation, int Zoomlevel)
         {
-            return OCRimage(imagelocation, Zoomlevel, out double TimeTaken, out float Confidence);
+            return OCRimage(Image.FromFile(imagelocation), Zoomlevel);
         }
 
-        public string OCRimage(Image ImageToUse, int Zoomlevel)
-        {
-            return OCRimage(ImageToUse, Zoomlevel, out double TimeTaken, out float Confidence);
-        }
-
-        public string OCRimage(string imagelocation, out float Confidence)
-        {
-            return OCRimage(imagelocation, 1, out double TimeTaken, out Confidence);
-        }
-
-        public string OCRimage(Image ImageToUse, out float Confidence)
-        {
-            return OCRimage(ImageToUse, 1, out double TimeTaken, out Confidence);
-        }
-
-        public string OCRimage(string imagelocation, int Zoomlevel, out float Confidence)
-        {
-            return OCRimage(imagelocation, Zoomlevel, out double TimeTaken, out Confidence);
-        }
-
-        public string OCRimage(Image ImageToUse, int Zoomlevel, out float Confidence)
-        {
-            return OCRimage(ImageToUse, Zoomlevel, out double TimeTaken, out Confidence);
-        }
-
-        public string OCRimage(string imagelocation, out double TimeTaken)
-        {
-            return OCRimage(imagelocation, 1, out TimeTaken, out float Confidence);
-        }
-
-        public string OCRimage(Image ImageToUse, out double TimeTaken)
-        {
-            return OCRimage(ImageToUse, 1, out TimeTaken, out float Confidence);
-            //return "";
-        }
-
-        public string OCRimage(string imagelocation, int Zoomlevel, out double TimeTaken)
-        {
-            return OCRimage(imagelocation, Zoomlevel, out TimeTaken, out float Confidence);
-        }
-
-        public string OCRimage(Image ImageToUse, int Zoomlevel, out double TimeTaken)
-        {
-            return OCRimage(ImageToUse, Zoomlevel, out TimeTaken, out float Confidence);
-        }
-
-        public string OCRimage(string imagelocation, out double TimeTaken, out float Confidence)
-        {
-            return OCRimage(imagelocation, 1, out TimeTaken, out Confidence);
-        }
-
-        public string OCRimage(Image ImageToUse, out double TimeTaken, out float Confidence)
-        {
-            return OCRimage(ImageToUse, 1, out TimeTaken, out Confidence);
-        }
-
-        public string OCRimage(string imagelocation, int Zoomlevel, out double TimeTaken, out float Confidence)
-        {
-            Image imagefile = Image.FromFile(imagelocation);
-            return OCRimage(imagefile, Zoomlevel, out TimeTaken, out Confidence);
-        }
-
-        public string OCRimage(Image ImageToUse, int Zoomlevel, out double TimeTaken, out float Confidence)
+        public TesseractOCRResult OCRimage(Image ImageToUse, int Zoomlevel)
         {
             DateTime Starttime = DateTime.Now;
 
@@ -194,13 +132,13 @@ namespace TesseractOCRPlugin
             string text = page.GetText();
 
             //Get confidence
-            Confidence = page.GetMeanConfidence();
+            float Confidence = page.GetMeanConfidence();
             //Get Time
             DateTime EndTime = DateTime.Now;
-            TimeTaken = (EndTime - Starttime).TotalSeconds;
+            double TimeTaken = (EndTime - Starttime).TotalSeconds;
             page.Dispose();
             img.Dispose();
-            return text;
+            return new TesseractOCRResult(text, TimeTaken, Confidence);
         }
 
         #endregion OCRImage Overloads
@@ -217,7 +155,7 @@ namespace TesseractOCRPlugin
             Parallel.ForEach(imagelocations, (currentimage) =>
                 {
                     //build up the results file via a templist
-                    Templist.Add(OCRimage(currentimage));
+                    Templist.Add(OCRimage(currentimage).OCRResult);
                 });
             return Templist;
         }
@@ -228,7 +166,7 @@ namespace TesseractOCRPlugin
             Parallel.ForEach(ImagestoUse, (currentimage) =>
             {
                 //build up the results file via a templist
-                Templist.Add(OCRimage(currentimage));
+                Templist.Add(OCRimage(currentimage).OCRResult);
             });
             return Templist;
         }

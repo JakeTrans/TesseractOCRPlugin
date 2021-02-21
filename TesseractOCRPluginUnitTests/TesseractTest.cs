@@ -32,7 +32,7 @@ namespace TesseractOCRPluginUnitTests
 
             TesseractOCR TessOCR = new TesseractOCR("eng", TesseractOCR.Quality.High);
 
-            string text = TessOCR.OCRimage(startupPath + @"\Images\testocr.png");
+            string text = TessOCR.OCRimage(startupPath + @"\Images\testocr.png").OCRResult;
             Trace.WriteLine("Output of OCR was:");
             Trace.WriteLine(text);
 
