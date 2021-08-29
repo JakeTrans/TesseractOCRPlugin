@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesseractPluginTest", "Tess
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesseractOCRPluginUnitTests", "TesseractOCRPluginUnitTests\TesseractOCRPluginUnitTests.csproj", "{15E5362B-D451-40BF-92DD-1C8D88B89ACB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesseractOCRPlugin (.Net Standard)", "TesseractOCRPlugin (.Net Standard)\TesseractOCRPlugin (.Net Standard).csproj", "{406EA5A1-FC04-4871-A43A-EEA0F4639A8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{15E5362B-D451-40BF-92DD-1C8D88B89ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15E5362B-D451-40BF-92DD-1C8D88B89ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15E5362B-D451-40BF-92DD-1C8D88B89ACB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{406EA5A1-FC04-4871-A43A-EEA0F4639A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{406EA5A1-FC04-4871-A43A-EEA0F4639A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{406EA5A1-FC04-4871-A43A-EEA0F4639A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{406EA5A1-FC04-4871-A43A-EEA0F4639A8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
