@@ -6,9 +6,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Accord.Imaging" Version="3.8.0" />
     <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
     <PackageReference Include="Tesseract" Version="4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Accord">
+      <HintPath>..\..\framework\Sources\Accord.Imaging\bin\Debug\netstandard2.0\Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Imaging">
+      <HintPath>..\..\framework\Sources\Accord.Imaging\bin\Debug\netstandard2.0\Accord.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math">
+      <HintPath>..\..\framework\Sources\Accord.Imaging\bin\Debug\netstandard2.0\Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math.Core">
+      <HintPath>..\..\framework\Sources\Accord.Imaging\bin\Debug\netstandard2.0\Accord.Math.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics">
+      <HintPath>..\..\framework\Sources\Accord.Imaging\bin\Debug\netstandard2.0\Accord.Statistics.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
