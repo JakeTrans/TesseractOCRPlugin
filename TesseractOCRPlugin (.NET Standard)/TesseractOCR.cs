@@ -149,7 +149,6 @@ namespace TesseractOCRPlugin
         public string OCRimage(Image ImageToUse, out double TimeTaken)
         {
             return OCRimage(ImageToUse, 1, out TimeTaken, out float Confidence);
-            //return "";
         }
 
         public string OCRimage(string imagelocation, int Zoomlevel, out double TimeTaken)
@@ -249,12 +248,10 @@ namespace TesseractOCRPlugin
             // OCR it
             Page page = TesseractOCRCore.Process(img);
             //get test
-
             string text = page.GetHOCRText(1);
             img.Dispose();
             page.Dispose();
             return text;
-            //return "";
         }
 
         #endregion HOCR
