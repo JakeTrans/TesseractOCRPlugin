@@ -186,7 +186,10 @@ namespace TesseractOCRPlugin
             //post process the image
             ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
-            Pix img = PixConverter.ToPix(ImageToOCR);
+            byte[] ImgByte = ToByteArray(ImageToOCR, System.Drawing.Imaging.ImageFormat.Bmp);
+
+            Pix img = Pix.LoadFromMemory(ImgByte);
+
             // OCR it
             Page page = TesseractOCRCore.Process(img);
             //get test
@@ -201,6 +204,10 @@ namespace TesseractOCRPlugin
             img.Dispose();
             return text;
         }
+
+        //var pixFromByteArray = Pix.LoadFromMemory(byteArray);
+        //var pixFromFile = Pix.LoadFromFile(fileName);
+        //
 
         #endregion OCRImage Overloads
 
@@ -244,7 +251,10 @@ namespace TesseractOCRPlugin
             //post process the image
             ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
-            Pix img = PixConverter.ToPix(ImageToOCR);
+
+            byte[] ImgByte = ToByteArray(ImageToOCR, System.Drawing.Imaging.ImageFormat.Bmp);
+
+            Pix img = Pix.LoadFromMemory(ImgByte);
             // OCR it
             Page page = TesseractOCRCore.Process(img);
             //get test
@@ -255,6 +265,15 @@ namespace TesseractOCRPlugin
         }
 
         #endregion HOCR
+
+        public byte[] ToByteArray(Image image, System.Drawing.Imaging.ImageFormat format)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, format);
+                return ms.ToArray();
+            }
+        }
 
         //Destructor
         ~TesseractOCR()
