@@ -1,5 +1,6 @@
 # TesseractOCRPlugin
 
+[![Build Status](https://dev.azure.com/JTGithubBuildPipeline/TesseractPluginMasterBuild/_apis/build/status/JakeTrans.TesseractOCRPlugin?branchName=master)](https://dev.azure.com/JTGithubBuildPipeline/TesseractPluginMasterBuild/_build/latest?definitionId=10&branchName=master)
 
 Tesseract OCR (4.00) with Accord Image Processing to improve quality  (.Net standard version in 4.1)
 
