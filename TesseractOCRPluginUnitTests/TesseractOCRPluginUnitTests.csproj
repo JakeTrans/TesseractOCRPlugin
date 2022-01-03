@@ -57,12 +57,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TesseractOCRPlugin\TesseractOCRPlugin.csproj">
-      <Project>{0ff83d70-bf83-404d-9be3-0bfff7e004ef}</Project>
-      <Name>TesseractOCRPlugin</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Images\testocr.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
