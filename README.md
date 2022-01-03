@@ -1,7 +1,7 @@
 # TesseractOCRPlugin
 [![Build Status](https://dev.azure.com/JTGithubBuildPipeline/CSVEditorBuild/_apis/build/status/JakeTrans.CSVEditor?branchName=master)](https://dev.azure.com/JTGithubBuildPipeline/CSVEditorBuild/_build/latest?definitionId=8&branchName=master)
 
-Tesseract OCR (4.00) with Accord Image Processing to improve quality
+Tesseract OCR (4.00) with Accord Image Processing to improve quality  (.Net standard version in 4.1)
 
 (the 3.04 version branch is here: https://github.com/JakeTrans/TesseractOCRPlugin/tree/tesseract-3.04-Version)
 
