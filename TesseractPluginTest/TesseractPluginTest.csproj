@@ -87,9 +87,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TesseractOCRPlugin\TesseractOCRPlugin.csproj">
-      <Project>{0ff83d70-bf83-404d-9be3-0bfff7e004ef}</Project>
-      <Name>TesseractOCRPlugin</Name>
+    <ProjectReference Include="..\TesseractOCRPlugin %28.Net Standard%29\TesseractOCRPlugin %28.Net Standard%29.csproj">
+      <Project>{406ea5a1-fc04-4871-a43a-eea0f4639a8a}</Project>
+      <Name>TesseractOCRPlugin %28.Net Standard%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
