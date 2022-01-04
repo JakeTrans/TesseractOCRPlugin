@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesseractOCRPlugin (.Net St
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesseractPluginTest (.Net Standard)", "TesseractPluginTest (.Net Standard)\TesseractPluginTest (.Net Standard).csproj", "{E045B431-2EDA-4BE0-8052-97BAD67E010C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesseractOCRPluginTester", "TesseractOCRPluginTester\TesseractOCRPluginTester.csproj", "{A3AEFAB8-B65E-4EF0-A499-7874255C5BEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E045B431-2EDA-4BE0-8052-97BAD67E010C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E045B431-2EDA-4BE0-8052-97BAD67E010C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E045B431-2EDA-4BE0-8052-97BAD67E010C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3AEFAB8-B65E-4EF0-A499-7874255C5BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3AEFAB8-B65E-4EF0-A499-7874255C5BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3AEFAB8-B65E-4EF0-A499-7874255C5BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3AEFAB8-B65E-4EF0-A499-7874255C5BEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
