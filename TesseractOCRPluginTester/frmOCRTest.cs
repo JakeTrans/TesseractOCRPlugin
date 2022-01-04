@@ -1,5 +1,3 @@
-using TesseractOCRPlugin;
-
 namespace TesseractOCRPluginTester
 {
     public partial class frmOCRTest : Form
@@ -8,7 +6,7 @@ namespace TesseractOCRPluginTester
 
         public frmOCRTest()
         {
-            TessOCR = new TesseractOCRPlugin.TesseractOCR("eng", TesseractOCR.Quality.High);
+            TessOCR = new TesseractOCRPlugin.TesseractOCR("eng", TesseractOCRPlugin.TesseractOCR.Quality.High);
             InitializeComponent();
         }
 
