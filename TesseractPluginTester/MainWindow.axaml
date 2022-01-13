@@ -9,8 +9,8 @@
 		<Label>Enter a File Path</Label>
 		<DockPanel>
 			<TextBox Watermark="FilePath" Width="550"></TextBox>
-			<Button>...</Button>
+			<Button Click="Browse_Click">...</Button>
 		</DockPanel>
-		<Button Click="OnButtonClick">Run OCR </Button>
+		<Button Click="RunOCR_Click">Run OCR </Button>
 	</StackPanel>
 </Window>

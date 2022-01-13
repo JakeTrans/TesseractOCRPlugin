@@ -20,8 +20,12 @@ namespace TesseractPluginTester
             AvaloniaXamlLoader.Load(this);
         }
 
-        private void OnButtonClick(object sender, RoutedEventArgs e)
+        private void RunOCR_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Debug.Print("test");
+        }
 
+        private void Browse_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Debug.Print("test");
         }
