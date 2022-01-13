@@ -1,5 +1,6 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 
 namespace TesseractPluginTester
@@ -17,6 +18,12 @@ namespace TesseractPluginTester
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
+        }
+
+        private void OnButtonClick(object sender, RoutedEventArgs e)
+
+        {
+            System.Diagnostics.Debug.Print("test");
         }
     }
 }
