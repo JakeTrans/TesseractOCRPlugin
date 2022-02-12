@@ -10,7 +10,7 @@ This is a implemention of Charles Weld's Tesseract dot.net wrapper https://githu
 
 By using Accord's Deskewing/Sharpening and Grayscaling filters the OCR rate has improved greatly.
 
-the Zip contains a Sample Application with a example usage.
+the repo contains a Sample Application with a example usage.
 
 if you find any issues or have any improvements please either submit Issues or feel free to submit a pull request.
 
