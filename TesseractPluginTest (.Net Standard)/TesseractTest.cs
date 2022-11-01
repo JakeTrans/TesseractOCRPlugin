@@ -5,7 +5,7 @@ using System.IO;
 using System.Reflection;
 using TesseractOCRPlugin;
 
-namespace TesseractPluginTest__.Net_Standard_
+namespace TesseractPluginTest
 {
     [TestClass]
     public class TesseractTest
