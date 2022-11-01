@@ -2,6 +2,8 @@
 
 [![Build Status](https://dev.azure.com/JTGithubBuildPipeline/TesseractPluginMasterBuild/_apis/build/status/JakeTrans.TesseractOCRPlugin?branchName=master)](https://dev.azure.com/JTGithubBuildPipeline/TesseractPluginMasterBuild/_build/latest?definitionId=10&branchName=master)
 
+****** tests themselves currently pass however issue in the pipelines
+
 Tesseract OCR (4.1) with Accord Image Processing to improve quality 
 
 
