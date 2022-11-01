@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>TesseractOCRPlugin__.Net_Standard_</RootNamespace>
+    <UserSecretsId>98ba6e81-7280-4126-90c5-9ceccd93d642</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
