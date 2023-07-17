@@ -2,7 +2,7 @@
 
 [![Build Status](https://dev.azure.com/JTGithubBuildPipeline/TesseractPluginMasterBuild/_apis/build/status/JakeTrans.TesseractOCRPlugin?branchName=master)](https://dev.azure.com/JTGithubBuildPipeline/TesseractPluginMasterBuild/_build/latest?definitionId=10&branchName=master)
 
-Tesseract OCR (4.1) with Accord Image Processing to improve quality 
+Tesseract OCR (5.20) with Accord Image Processing to improve quality 
 
 
 This is a implemention of Charles Weld's Tesseract dot.net wrapper https://github.com/charlesw/tesseract along with the Accord .net framework (my fork of the framework to fix the .Net Core build) https://github.com/JakeTrans/framework to create a OCR engine with automated image enhancement.  
