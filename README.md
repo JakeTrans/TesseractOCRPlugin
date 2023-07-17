@@ -5,7 +5,7 @@
 Tesseract OCR (4.1) with Accord Image Processing to improve quality 
 
 
-This is a implemention of Charles Weld's Tesseract dot.net wrapper https://github.com/charlesw/tesseract along with the Accord .net framework https://github.com/accord-net/framework  to create a OCR engine with automated image enhancement.  
+This is a implemention of Charles Weld's Tesseract dot.net wrapper https://github.com/charlesw/tesseract along with the Accord .net framework (my fork of the framework to fix the .Net Core build) https://github.com/JakeTrans/framework to create a OCR engine with automated image enhancement.  
 
 
 By using Accord's Deskewing/Sharpening and Grayscaling filters the OCR rate has improved greatly.
