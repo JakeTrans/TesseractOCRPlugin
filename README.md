@@ -1,6 +1,5 @@
 # TesseractOCRPlugin
 
-[![Build Status](https://dev.azure.com/JTGithubBuildPipeline/TesseractPluginMasterBuild/_apis/build/status/JakeTrans.TesseractOCRPlugin?branchName=master)](https://dev.azure.com/JTGithubBuildPipeline/TesseractPluginMasterBuild/_build/latest?definitionId=10&branchName=master)
 
 [![.NET](https://github.com/JakeTrans/TesseractOCRPlugin/actions/workflows/dotnet.yml/badge.svg)](https://github.com/JakeTrans/TesseractOCRPlugin/actions/workflows/dotnet.yml)
 
