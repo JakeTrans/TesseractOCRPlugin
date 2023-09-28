@@ -1,7 +1,6 @@
 # TesseractOCRPlugin
 
-
-[![.NET](https://github.com/JakeTrans/TesseractOCRPlugin/actions/workflows/dotnet.yml/badge.svg)](https://github.com/JakeTrans/TesseractOCRPlugin/actions/workflows/dotnet.yml)
+[![Windows Build](https://github.com/JakeTrans/TesseractOCRPlugin/actions/workflows/dotnet.yml/badge.svg)](https://github.com/JakeTrans/TesseractOCRPlugin/actions/workflows/dotnet.yml)
 
 Tesseract OCR (5.20) with Accord Image Processing to improve quality 
 
