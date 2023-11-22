@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    <PackageReference Include="IronSoftware.System.Drawing" Version="2023.12.1" />
     <PackageReference Include="Tesseract" Version="4.1.1" />
   </ItemGroup>
 
