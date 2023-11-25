@@ -1,4 +1,4 @@
-﻿using Accord.IO;
+﻿using IronImageProcessing;
 using IronSoftware.Drawing;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Advanced;
@@ -193,7 +193,7 @@ namespace TesseractOCRPlugin
             LoadImage(ImageToUse);
             //post process the image
 
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
+            ImageToOCR = IronImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
 
             //AnyBitmap tempbitmap = ImageToOCR;
@@ -265,7 +265,7 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(ImageToUse);
             //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
+            ImageToOCR = IronImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
 
             AnyBitmap tempbitmap = ImageToOCR;

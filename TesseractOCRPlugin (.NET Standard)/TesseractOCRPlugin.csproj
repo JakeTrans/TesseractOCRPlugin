@@ -4,29 +4,12 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>TesseractOCRPlugin__.Net_Standard_</RootNamespace>
     <UserSecretsId>98ba6e81-7280-4126-90c5-9ceccd93d642</UserSecretsId>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="IronSoftware.System.Drawing" Version="2023.12.1" />
     <PackageReference Include="Tesseract" Version="4.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Accord">
-      <HintPath>..\..\framework\Sources\Accord.Imaging\bin\Debug\netstandard2.0\Accord.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Imaging">
-      <HintPath>..\..\framework\Sources\Accord.Imaging\bin\Debug\netstandard2.0\Accord.Imaging.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Math">
-      <HintPath>..\..\framework\Sources\Accord.Imaging\bin\Debug\netstandard2.0\Accord.Math.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Math.Core">
-      <HintPath>..\..\framework\Sources\Accord.Imaging\bin\Debug\netstandard2.0\Accord.Math.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Statistics">
-      <HintPath>..\..\framework\Sources\Accord.Imaging\bin\Debug\netstandard2.0\Accord.Statistics.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>
