@@ -1,12 +1,13 @@
 ﻿using IronSoftware.Drawing;
 using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace IronImageProcessing
 {
+    // https://stackoverflow.com/questions/2394405/deskew-scanned-images
+    //rejigged to ImageSharp/IronDrawing
     public class Deskew
     {
         // Representation of a line in the image.
@@ -23,7 +24,7 @@ namespace IronImageProcessing
         }
 
         // The Bitmap
-        private AnyBitmap _internalBmp;
+        private Image _internalBmp;
 
         // The range of angles to search for lines
         private const double ALPHA_START = -20;
@@ -45,7 +46,7 @@ namespace IronImageProcessing
         // Count of points that fit in a line.
         private int[] _hMatrix;
 
-        public AnyBitmap DeskewImage(AnyBitmap image)
+        public AnyBitmap DeskewImage(Image image)
         {
             Image img = image;
 
@@ -53,7 +54,7 @@ namespace IronImageProcessing
             _internalBmp = img;
 
             img.Mutate(x => x.Rotate((float)GetSkewAngle()));
-            return (AnyBitmap)img;
+            return img;
         }
 
         // Calculate the skew angle of the image cBmp.
@@ -120,6 +121,8 @@ namespace IronImageProcessing
             int hMax = _internalBmp.Height * 3 / 4;
 
             Init();
+
+            //slow process
             for (int y = hMin; y <= hMax; y++)
             {
                 for (int x = 1; x <= _internalBmp.Width - 2; x++)
@@ -164,7 +167,9 @@ namespace IronImageProcessing
 
         private bool IsBlack(int x, int y)
         {
-            IronSoftware.Drawing.Color c = _internalBmp.GetPixel(x, y);
+            Image<Rgba32> image = (Image<Rgba32>)_internalBmp;
+
+            Rgba32 c = image[x, y];
             double luminance = (c.R * 0.299) + (c.G * 0.587) + (c.B * 0.114);
             return luminance < 140;
         }

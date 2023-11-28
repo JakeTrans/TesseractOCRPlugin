@@ -1,17 +1,14 @@
 ﻿using IronImageProcessing;
 using IronSoftware.Drawing;
 using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.Advanced;
 using SixLabors.ImageSharp.Formats;
 using SixLabors.ImageSharp.Formats.Png;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 using Tesseract;
-using static IronSoftware.Drawing.AnyBitmap;
 
 namespace TesseractOCRPlugin
 {

@@ -1,5 +1,7 @@
 ﻿using IronSoftware.Drawing;
 using SixLabors.ImageSharp.Processing;
+using System;
+using System.Diagnostics;
 
 namespace IronImageProcessing
 {
@@ -21,9 +23,6 @@ namespace IronImageProcessing
 
         private static AnyBitmap Deskewimage(AnyBitmap image)
         {
-            // create instance of skew checker
-
-            // get documents skew angle
             Deskew SkewDetect = new Deskew();
             SkewDetect.DeskewImage(image);
 
