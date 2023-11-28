@@ -8,7 +8,7 @@ Tesseract OCR (4.1) with IronDrawing  to improve quality and compataibility
 This is a implemention of Charles Weld's Tesseract dot.net wrapper https://github.com/charlesw/tesseract along with the Accord .net framework https://github.com/accord-net/framework  to create a OCR engine with automated image enhancement.  
 
 
-By using Accord's Deskewing/Sharpening and Grayscaling filters the OCR rate has improved greatly.
+By using Iron Drawing Deskewing/Sharpening and Grayscaling filters to improve the OCR rate.
 
 the repo contains a Sample Application with a example usage.
 
