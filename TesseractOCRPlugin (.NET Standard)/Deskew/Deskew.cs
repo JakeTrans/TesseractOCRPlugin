@@ -3,6 +3,7 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 using System;
+using System.Diagnostics;
 
 namespace IronImageProcessing
 {
@@ -52,8 +53,11 @@ namespace IronImageProcessing
 
             img.Mutate(x => x.Resize(1000, 1000));
             _internalBmp = img;
+            double angle = GetSkewAngle();
+            Debug.Print("Angle was - " + angle.ToString());
 
-            img.Mutate(x => x.Rotate((float)GetSkewAngle()));
+            img.Mutate(x => x.Rotate((float)angle));
+            img.SaveAsBmp(@"D:\User\Pictures\testrotate.bmp");
             return img;
         }
 
