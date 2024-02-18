@@ -1,7 +1,10 @@
 ﻿using IronSoftware.Drawing;
+
 using SixLabors.ImageSharp.Processing;
-using System;
-using System.Diagnostics;
+using System.IO;
+using SixLabors.ImageSharp.Formats.Png;
+using SixLabors.ImageSharp.Formats;
+using TesseractOCRPlugin__.Net_Standard_.Deskew;
 
 namespace IronImageProcessing
 {
@@ -21,11 +24,11 @@ namespace IronImageProcessing
             return image;
         }
 
-        private static AnyBitmap Deskewimage(AnyBitmap image)
+        private static AnyBitmap Deskewimage(SixLabors.ImageSharp.Image image)
         {
-            Deskew SkewDetect = new Deskew();
-            SkewDetect.DeskewImage(image);
-
+            Deskew cVDeskew = new Deskew();
+            double Angle = cVDeskew.GetDeskewAngle(image);
+            image.Mutate(x => x.Rotate((float)Angle));
             return image;
         }
 
@@ -37,7 +40,13 @@ namespace IronImageProcessing
             {
                 SourceImage = Resizeimage(SourceImage, SourceImage.Width * Zoomlevel, SourceImage.Height * Zoomlevel);
             }
-            SourceImage = Deskewimage(SourceImage);
+            MemoryStream memoryStream = new MemoryStream();
+            IImageEncoder IID = new PngEncoder();
+            SourceImage.Save(memoryStream, IID);
+
+            //Mat mat = Mat.FromArray(memoryStream.ToArray());
+
+            Deskewimage(SourceImage);
 
             return SourceImage;
         }
