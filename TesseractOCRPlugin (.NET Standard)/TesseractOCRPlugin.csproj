@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="Emgu.CV" Version="4.8.1.5350" />
+    <PackageReference Include="Emgu.CV.Bitmap" Version="4.8.1.5350" />
     <PackageReference Include="IronSoftware.System.Drawing" Version="2023.12.1" />
     <PackageReference Include="Tesseract" Version="4.1.1" />
   </ItemGroup>

@@ -11,8 +11,8 @@ namespace TesseractOCRPlugin__.Net_Standard_.Deskew
         public double GetDeskewAngle(AnyBitmap image)
         {
             // Load the image
-            Mat src = CvInvoke.Imread("path_to_your_image", ImreadModes.Color);
 
+            Mat src = AnyBitmapExenstion.GetMatFromAnyBitmap(image);
             // Convert to grayscale
             Mat gray = new Mat();
             CvInvoke.CvtColor(src, gray, ColorConversion.Bgr2Gray);
