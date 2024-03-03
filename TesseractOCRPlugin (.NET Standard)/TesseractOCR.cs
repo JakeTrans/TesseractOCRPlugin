@@ -191,8 +191,8 @@ namespace TesseractOCRPlugin
             //post process the image
 
             ImageToOCR = IronImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
-            //Convert to Tesseract format
 
+            //Convert to Tesseract format
             //AnyBitmap tempbitmap = ImageToOCR;
             //byte[] ImgByte = tempbitmap.ExportBytes();
 

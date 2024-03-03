@@ -5,6 +5,7 @@ using System.IO;
 using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.Formats;
 using TesseractOCRPlugin__.Net_Standard_.Deskew;
+using SixLabors.ImageSharp;
 
 namespace IronImageProcessing
 {
@@ -27,14 +28,18 @@ namespace IronImageProcessing
         private static AnyBitmap Deskewimage(SixLabors.ImageSharp.Image image)
         {
             Deskew cVDeskew = new Deskew();
-            double Angle = cVDeskew.GetDeskewAngle(image);
-            image.Mutate(x => x.Rotate((float)Angle));
+            //double Angle = cVDeskew.GetDeskewAngle(image);
+            //image.SaveAsBmp(new FileStream(@"D:\OCR\TestInput.bmp", FileMode.Create, FileAccess.Write, FileShare.ReadWrite));
+            //Angle = Angle * -1;
+            //image.Mutate(x => x.Rotate((float)Angle));
+            image = cVDeskew.DeskewImage(image);
+            //image.SaveAsBmp(new FileStream(@"D:\OCR\Testoutput.bmp", FileMode.Create, FileAccess.Write, FileShare.ReadWrite));
             return image;
         }
 
         public static SixLabors.ImageSharp.Image ImageProcessing(SixLabors.ImageSharp.Image SourceImage, int Zoomlevel)
         {
-            SourceImage = Grayscaleimage(SourceImage);
+            // SourceImage = Grayscaleimage(SourceImage);
 
             if (Zoomlevel != 1)
             {
@@ -46,7 +51,7 @@ namespace IronImageProcessing
 
             //Mat mat = Mat.FromArray(memoryStream.ToArray());
 
-            Deskewimage(SourceImage);
+            SourceImage = Deskewimage(SourceImage);
 
             return SourceImage;
         }
