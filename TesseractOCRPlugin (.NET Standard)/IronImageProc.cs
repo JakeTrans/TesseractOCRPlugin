@@ -39,7 +39,7 @@ namespace IronImageProcessing
 
         public static SixLabors.ImageSharp.Image ImageProcessing(SixLabors.ImageSharp.Image SourceImage, int Zoomlevel)
         {
-            // SourceImage = Grayscaleimage(SourceImage);
+            Deskew cVDeskew = new Deskew();
 
             if (Zoomlevel != 1)
             {
@@ -49,10 +49,8 @@ namespace IronImageProcessing
             IImageEncoder IID = new PngEncoder();
             SourceImage.Save(memoryStream, IID);
 
-            //Mat mat = Mat.FromArray(memoryStream.ToArray());
-
-            SourceImage = Deskewimage(SourceImage);
-
+            SourceImage = cVDeskew.DeskewImage(SourceImage);
+            SourceImage.Save(memoryStream, IID);
             return SourceImage;
         }
     }

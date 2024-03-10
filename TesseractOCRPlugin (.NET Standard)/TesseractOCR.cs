@@ -190,7 +190,7 @@ namespace TesseractOCRPlugin
             LoadImage(ImageToUse);
             //post process the image
 
-            ImageToOCR = IronImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
+            ImageToOCR = IronImageProc.ImageProcessing(ImageToUse, Zoomlevel);
 
             //Convert to Tesseract format
             //AnyBitmap tempbitmap = ImageToOCR;
@@ -198,7 +198,7 @@ namespace TesseractOCRPlugin
 
             MemoryStream ms = new MemoryStream();
             IImageEncoder IID = new PngEncoder();
-            ImageToUse.Save(ms, IID);
+            ImageToOCR.Save(ms, IID);
             byte[] imgbyte = ms.ToArray();
 
             Pix img = Pix.LoadFromMemory(imgbyte);
