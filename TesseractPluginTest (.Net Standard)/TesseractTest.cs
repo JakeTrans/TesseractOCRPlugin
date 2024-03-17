@@ -40,7 +40,7 @@ namespace TesseractPluginTest
         }
 
         [TestMethod]
-        public void SkewTest()
+        public void SkewTest10DegreeAntiClockwise()
         {
             string expectedtext = @"This is a lot of 12 point text to test the ocr code and see if it works on all types
     of file format.

@@ -1,11 +1,9 @@
-﻿using Emgu.CV.Structure;
-using Emgu.CV;
+﻿using Emgu.CV;
+using Emgu.CV.Structure;
 using IronSoftware.Drawing;
 using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
 using System.Drawing;
-using System.Text;
+using System.Drawing.Imaging;
 
 namespace TesseractOCRPlugin__.Net_Standard_.Deskew
 {

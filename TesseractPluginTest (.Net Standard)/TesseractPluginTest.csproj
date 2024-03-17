@@ -37,4 +37,13 @@
     <ProjectReference Include="..\TesseractOCRPlugin (.Net Standard)\TesseractOCRPlugin.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Images\text10anticlockwise.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\text20clockwise.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
