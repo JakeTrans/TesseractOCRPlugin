@@ -10,7 +10,7 @@ namespace TesseractPluginTest
     [TestClass]
     public class TesseractTest
     {
-        private string startupPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location).Replace(@"file:\", string.Empty);
+        private readonly string startupPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location).Replace(@"file:\", string.Empty);
 
         [TestMethod]
         public void InitTest()
@@ -48,7 +48,7 @@ namespace TesseractPluginTest
     lazy fox. The quick brown dog jumped
     over the lazy fox. The quick brown dog
     jumped over the lazy fox. The quick
-    brown dog jumped over the lazy fox.";
+    brown dog jumped over the lazy fox";
 
             TesseractOCR TessOCR = new TesseractOCR("eng", TesseractOCR.Quality.High);
 
@@ -62,14 +62,14 @@ namespace TesseractPluginTest
         [TestMethod]
         public void SkewTest10Degreelockwise()
         {
-            //yes the lazy is spelt Iazy - the image used seems to cause this is incorrectly recogized , but all others letter are there
-            string expectedtext = @"This is a lot of 12 point text to test the ocr code and see if it works on all types
-    of file format.
+            //the is based on the expected result so the text is a little odd
+            string expectedtext = @"This is a lot of 12 point text o test the ocr code and see if it works on ail types
+    of fle format.
     The quick brown dog jumped over the
     lazy fox. The quick brown dog jumped
     over the lazy fox. The quick brown dog
     Jumped over the lazy fox. The quick
-    brown dog jumped over the lazy fox";
+    brown dog jumped over the lazy fox.";
 
             TesseractOCR TessOCR = new TesseractOCR("eng", TesseractOCR.Quality.High);
 

@@ -22,15 +22,18 @@ namespace TesseractOCRPlugin__.Net_Standard_.Deskew
             Mat src = AnyBitmapExenstion.GetMatFromAnyBitmap(image);
             // Convert to grayscale
             Mat gray = new Mat();
+            Mat Bilateral = new Mat();
             CvInvoke.CvtColor(src, gray, ColorConversion.Bgr2Gray);
-
+            gray.Save(@"D:\OCR\grey.jpg");
+            CvInvoke.BilateralFilter(gray, Bilateral, 15, 10, 10);
+            Bilateral.Save(@"D:\OCR\Bilateral.jpg");
             Mat cannyEdges = new Mat();
-            CvInvoke.Canny(gray, cannyEdges, cannyThreshold, cannyThresholdLinking);
+            CvInvoke.Canny(Bilateral, cannyEdges, cannyThreshold, cannyThresholdLinking);
 
             LineSegment2D[] lines = CvInvoke.HoughLinesP(
                 image: cannyEdges,
                 rho: 1, //Distance resolution in pixel-related units
-                theta: Math.PI / 180, //Angle resolution measured in radians.
+                theta: Math.PI / 360, //Angle resolution measured in radians.
                 80, //threshold
                 30, //min Line width
                 10); //gap between lines
@@ -53,7 +56,7 @@ namespace TesseractOCRPlugin__.Net_Standard_.Deskew
             // Get the average angle in degrees
             angle = angle / lines.Length * 180.0 / Math.PI;
 
-            Mat rotated = gray;
+            Mat rotated = Bilateral;
 
             Image<Bgr, byte> orignalimage = rotated.ToImage<Bgr, byte>(); ;
             Debug.Print("angle detected was: " + angle);
