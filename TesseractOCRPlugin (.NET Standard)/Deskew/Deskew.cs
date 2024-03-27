@@ -29,8 +29,8 @@ namespace TesseractOCRPlugin__.Net_Standard_.Deskew
 
             LineSegment2D[] lines = CvInvoke.HoughLinesP(
                 image: cannyEdges,
-                rho: 1, //Distance resolution in pixel-related units
-                theta: Math.PI / 180, //Angle resolution measured in radians.
+                rho: 10, //Distance resolution in pixel-related units
+                theta: Math.PI / 360, //Angle resolution measured in radians.
                 50, //threshold
                 10, //min Line width
                 10); //gap between lines
