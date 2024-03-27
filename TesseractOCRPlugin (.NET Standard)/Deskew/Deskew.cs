@@ -29,9 +29,9 @@ namespace TesseractOCRPlugin__.Net_Standard_.Deskew
 
             LineSegment2D[] lines = CvInvoke.HoughLinesP(
                 image: cannyEdges,
-                rho: 10, //Distance resolution in pixel-related units
+                rho: 1, //Distance resolution in pixel-related units
                 theta: Math.PI / 360, //Angle resolution measured in radians.
-                50, //threshold
+                10, //threshold
                 10, //min Line width
                 10); //gap between lines
 
@@ -59,6 +59,7 @@ namespace TesseractOCRPlugin__.Net_Standard_.Deskew
             Debug.Print("angle detected was: " + angle);
             //Image<Bgr, byte> rotatedImage = orignalimage.Rotate(angle, new Bgr(255, 255, 255));
             Image<Bgr, byte> rotatedImage = orignalimage.Rotate(-angle, new Bgr(255, 255, 255));
+
             return rotatedImage.ToBitmap<Bgr, byte>();
         }
     }
