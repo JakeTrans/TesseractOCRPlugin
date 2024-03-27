@@ -1,15 +1,19 @@
-﻿using Emgu.CV;
+﻿using BitMiracle.LibTiff.Classic;
+using Emgu.CV;
 using Emgu.CV.CvEnum;
+using Emgu.CV.Reg;
 using Emgu.CV.Structure;
+using Emgu.CV.Util;
 using IronSoftware.Drawing;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace TesseractOCRPlugin__.Net_Standard_.Deskew
 {
     public class Deskew
     {
-        public AnyBitmap DeskewImage(AnyBitmap image)
+        public AnyBitmap DeskewImageP(AnyBitmap image)
         {
             double cannyThreshold = 180.0;
             double cannyThresholdLinking = 120.0;
@@ -26,10 +30,18 @@ namespace TesseractOCRPlugin__.Net_Standard_.Deskew
             LineSegment2D[] lines = CvInvoke.HoughLinesP(
                 image: cannyEdges,
                 rho: 1, //Distance resolution in pixel-related units
-                theta: Math.PI / 360, //Angle resolution measured in radians.
-                10, //threshold
+                theta: Math.PI / 180, //Angle resolution measured in radians.
+                50, //threshold
                 10, //min Line width
                 10); //gap between lines
+
+            //LineSegment2D[] lines = CvInvoke.HoughLinesP(
+            //    image: cannyEdges,
+            //    rho: 1, //Distance resolution in pixel-related units
+            //    theta: Math.PI / 360, //Angle resolution measured in radians.
+            //    10, //threshold
+            //    10, //min Line width
+            //    10); //gap between lines
 
             double angle = 0.0;
 

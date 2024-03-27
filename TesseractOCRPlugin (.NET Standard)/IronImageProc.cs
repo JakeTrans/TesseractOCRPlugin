@@ -35,7 +35,8 @@ namespace IronImageProcessing
             IImageEncoder IID = new PngEncoder();
             SourceImage.Save(memoryStream, IID);
 
-            SourceImage = cVDeskew.DeskewImage(SourceImage);
+            SourceImage = cVDeskew.DeskewImageP(SourceImage);
+
             SourceImage.Save(memoryStream, IID);
             return SourceImage;
         }
