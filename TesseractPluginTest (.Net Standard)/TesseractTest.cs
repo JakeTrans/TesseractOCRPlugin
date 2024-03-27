@@ -62,7 +62,7 @@ namespace TesseractPluginTest
         [TestMethod]
         public void SkewTest10Degreelockwise()
         {
-            //the is based on the expected result so the text is a little odd
+            //this is based on the expected result so the text is a little odd
             string expectedtext = @"This is a lot of 12 point text o test the ocr code and see if it works on ail types
     of fle format.
     The quick brown dog jumped over the

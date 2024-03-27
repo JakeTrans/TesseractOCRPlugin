@@ -1,12 +1,8 @@
-﻿using BitMiracle.LibTiff.Classic;
-using Emgu.CV;
+﻿using Emgu.CV;
 using Emgu.CV.CvEnum;
-using Emgu.CV.Reg;
 using Emgu.CV.Structure;
-using Emgu.CV.Util;
 using IronSoftware.Drawing;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace TesseractOCRPlugin__.Net_Standard_.Deskew
