@@ -62,9 +62,8 @@ namespace TesseractPluginTest
         [TestMethod]
         public void SkewTest10Degreelockwise()
         {
-            //this is based on the expected result so the text is a little odd
-            string expectedtext = @"This is a lot of 12 point text o test the ocr code and see if it works on ail types
-    of fle format.
+            string expectedtext = @"This is a lot of 12 point text to test the ocr code and see if it works on all types
+    of file format.
     The quick brown dog jumped over the
     lazy fox. The quick brown dog jumped
     over the lazy fox. The quick brown dog
@@ -73,7 +72,7 @@ namespace TesseractPluginTest
 
             TesseractOCR TessOCR = new TesseractOCR("eng", TesseractOCR.Quality.High);
 
-            string text = TessOCR.OCRimage(startupPath + @"\Images\text10clockwise.jpg");
+            string text = TessOCR.OCRimage(startupPath + @"\Images\text10clockwise.jpg", 2);
             Trace.WriteLine("Output of OCR was:");
             Trace.WriteLine(text);
 
