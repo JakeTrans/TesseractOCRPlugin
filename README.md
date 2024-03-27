@@ -2,7 +2,7 @@
 
 [![Build Status](https://dev.azure.com/JTGithubBuildPipeline/TesseractPluginMasterBuild/_apis/build/status/JakeTrans.TesseractOCRPlugin?branchName=master)](https://dev.azure.com/JTGithubBuildPipeline/TesseractPluginMasterBuild/_build/latest?definitionId=10&branchName=master)
 
-Tesseract OCR (4.1) with IronDrawing and Emgu CV to improve quality and Compatibility
+Tesseract OCR (5.0) with IronDrawing and Emgu CV to improve quality and Compatibility
 
 (Please note I've done this to make things work better for cross platform , I've kept a branch with the Accord Version)
 
