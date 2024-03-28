@@ -1,4 +1,3 @@
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
@@ -20,9 +19,9 @@ namespace TesseractPluginTester
             this.DataContext = OCRData;
             TessOCR = new TesseractOCRPlugin.TesseractOCR("eng", TesseractOCRPlugin.TesseractOCR.Quality.High);
 
-#if DEBUG
-            this.AttachDevTools();
-#endif
+            //#if DEBUG
+            //            this.AttachDevTools();
+            //#endif
         }
 
         private void InitializeComponent()

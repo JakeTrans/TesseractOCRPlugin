@@ -1,6 +1,10 @@
-﻿using System;
+﻿using IronImageProcessing;
+using IronSoftware.Drawing;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats;
+using SixLabors.ImageSharp.Formats.Png;
+using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -15,7 +19,7 @@ namespace TesseractOCRPlugin
         /// </summary>
         public TesseractEngine TesseractOCRCore;
 
-        private Bitmap ImageToOCR;
+        private Image ImageToOCR;
 
         /// <summary>
         /// Quality level of the Tesseract Process
@@ -87,11 +91,11 @@ namespace TesseractOCRPlugin
 
         private void LoadImage(Image ImageToUse)
         {
-            //Welcome to the bizarre world of GDI+ in C# with new Bitmap everywhere
-            Bitmap BitmapToOCR = new Bitmap(new Bitmap(ImageToUse));
-            BitmapToOCR = BitmapToOCR.Clone(new Rectangle(0, 0, BitmapToOCR.Width, BitmapToOCR.Height), System.Drawing.Imaging.PixelFormat.Format32bppArgb); //force type
+            AnyBitmap BitmapToOCR = ImageToUse;
+            BitmapToOCR = BitmapToOCR.Clone(new IronSoftware.Drawing.Rectangle(0, 0, BitmapToOCR.Width, BitmapToOCR.Height)); //force type
+
             //Format32bppArgb
-            ImageToOCR = new Bitmap(BitmapToOCR);
+            ImageToOCR = BitmapToOCR;
             BitmapToOCR.Dispose();
         }
 
@@ -173,7 +177,8 @@ namespace TesseractOCRPlugin
 
         public string OCRimage(string imagelocation, int Zoomlevel, out double TimeTaken, out float Confidence)
         {
-            Image imagefile = Image.FromFile(imagelocation);
+            Image imagefile = Image.Load(imagelocation);
+
             return OCRimage(imagefile, Zoomlevel, out TimeTaken, out Confidence);
         }
 
@@ -184,11 +189,19 @@ namespace TesseractOCRPlugin
             //load in image
             LoadImage(ImageToUse);
             //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
-            //Convert to Tesseract format
-            byte[] ImgByte = ToByteArray(ImageToOCR, System.Drawing.Imaging.ImageFormat.Bmp);
 
-            Pix img = Pix.LoadFromMemory(ImgByte);
+            ImageToOCR = IronImageProc.ImageProcessing(ImageToUse, Zoomlevel);
+
+            //Convert to Tesseract format
+            //AnyBitmap tempbitmap = ImageToOCR;
+            //byte[] ImgByte = tempbitmap.ExportBytes();
+
+            MemoryStream ms = new MemoryStream();
+            IImageEncoder IID = new PngEncoder();
+            ImageToOCR.Save(ms, IID);
+            byte[] imgbyte = ms.ToArray();
+
+            Pix img = Pix.LoadFromMemory(imgbyte);
 
             // OCR it
             Page page = TesseractOCRCore.Process(img);
@@ -244,15 +257,17 @@ namespace TesseractOCRPlugin
         #region HOCR
 
         //Get word location
-        public string OCRimagewithLocation(Image ImageToUse, int Zoomlevel)
+        public string OCRimagewithLocation(AnyBitmap ImageToUse, int Zoomlevel)
         {
             //load in image
             LoadImage(ImageToUse);
             //post process the image
-            ImageToOCR = AccordImageProcessing.AccordImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
+            ImageToOCR = IronImageProc.ImageProcessing(ImageToOCR, Zoomlevel);
             //Convert to Tesseract format
 
-            byte[] ImgByte = ToByteArray(ImageToOCR, System.Drawing.Imaging.ImageFormat.Bmp);
+            AnyBitmap tempbitmap = ImageToOCR;
+
+            byte[] ImgByte = tempbitmap.ExportBytes();
 
             Pix img = Pix.LoadFromMemory(ImgByte);
             // OCR it
@@ -266,7 +281,7 @@ namespace TesseractOCRPlugin
 
         #endregion HOCR
 
-        public byte[] ToByteArray(Image image, System.Drawing.Imaging.ImageFormat format)
+        public byte[] ToByteArray(Image image, SixLabors.ImageSharp.Formats.IImageEncoder format)
         {
             using (MemoryStream ms = new MemoryStream())
             {

@@ -10,7 +10,7 @@ namespace TesseractPluginTest
     [TestClass]
     public class TesseractTest
     {
-        private string startupPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location).Replace(@"file:\", string.Empty);
+        private readonly string startupPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location).Replace(@"file:\", string.Empty);
 
         [TestMethod]
         public void InitTest()
@@ -37,6 +37,46 @@ namespace TesseractPluginTest
             Trace.WriteLine(text);
 
             Assert.AreEqual(expectedtext.Replace(" ", "").Replace(Environment.NewLine, ""), text.Replace(" ", "").Replace("\n", ""), "OCR doesn't match");
+        }
+
+        [TestMethod]
+        public void SkewTest10DegreeAntiClockwise()
+        {
+            string expectedtext = @"This is a lot of 12 point text to test the ocr code and see if it works on all types
+    of file format.
+    The quick brown dog jumped over the
+    lazy fox. The quick brown dog jumped
+    over the lazy fox. The quick brown dog
+    jumped over the lazy fox. The quick
+    brown dog jumped over the lazy fox";
+
+            TesseractOCR TessOCR = new TesseractOCR("eng", TesseractOCR.Quality.High);
+
+            string text = TessOCR.OCRimage(startupPath + @"\Images\text10anticlockwise.jpg");
+            Trace.WriteLine("Output of OCR was:");
+            Trace.WriteLine(text);
+
+            Assert.AreEqual(expectedtext.Replace(" ", "").Replace(Environment.NewLine, "").ToLower(), text.Replace(" ", "").Replace("\n", "").ToLower(), "OCR doesn't match");
+        }
+
+        [TestMethod]
+        public void SkewTest10Degreelockwise()
+        {
+            string expectedtext = @"This is a lot of 12 point text to test the ocr code and see if it works on all types
+    of file format.
+    The quick brown dog jumped over the
+    lazy fox. The quick brown dog jumped
+    over the lazy fox. The quick brown dog
+    Jumped over the lazy fox. The quick
+    brown dog jumped over the lazy fox.";
+
+            TesseractOCR TessOCR = new TesseractOCR("eng", TesseractOCR.Quality.High);
+
+            string text = TessOCR.OCRimage(startupPath + @"\Images\text10clockwise.jpg", 2);
+            Trace.WriteLine("Output of OCR was:");
+            Trace.WriteLine(text);
+
+            Assert.AreEqual(expectedtext.Replace(" ", "").Replace(Environment.NewLine, "").ToLower(), text.Replace(" ", "").Replace("\n", "").ToLower(), "OCR doesn't match");
         }
     }
 }
