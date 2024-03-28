@@ -20,9 +20,9 @@ namespace TesseractOCRPlugin__.Net_Standard_.Deskew
             Mat gray = new Mat();
             Mat Bilateral = new Mat();
             CvInvoke.CvtColor(src, gray, ColorConversion.Bgr2Gray);
-            gray.Save(@"D:\OCR\grey.jpg");
+
             CvInvoke.BilateralFilter(gray, Bilateral, 15, 10, 10);
-            Bilateral.Save(@"D:\OCR\Bilateral.jpg");
+
             Mat cannyEdges = new Mat();
             CvInvoke.Canny(Bilateral, cannyEdges, cannyThreshold, cannyThresholdLinking);
 
