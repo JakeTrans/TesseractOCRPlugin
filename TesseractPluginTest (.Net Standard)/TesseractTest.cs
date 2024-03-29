@@ -42,13 +42,14 @@ namespace TesseractPluginTest
         [TestMethod]
         public void SkewTest10DegreeAntiClockwise()
         {
-            string expectedtext = @"This is a lot of 12 point text to test the ocr code and see if it works on all types
-            of file format.
-            The quick brown dog jumped over the
-            lazy fox. The quick brown dog jumped
-            over the lazy fox. The quick brown dog
-            jumped over the lazy fox. The quick
-            brown dog jumped over the lazy fox";
+            string expectedtext = "This is a lot of 12 point text to test the\n" +
+                        "ocr code and see if it works on  alltypes\n" +
+                        "of file format." + "\n\n" +
+                        "The quick brown dog jumped over the" + "\n" +
+                        "lazy fox. The quick brown dog jumped" + "\n" +
+                        "over the lazy fox. The quick brown dog" + "\n" +
+                        "jumped over the lazy fox. The quick" + "\n" +
+                        "brown dog jumped over the lazy fox" + "\n";
 
             TesseractOCR TessOCR = new TesseractOCR("eng", TesseractOCR.Quality.High);
 
@@ -56,19 +57,20 @@ namespace TesseractPluginTest
             Trace.WriteLine("Output of OCR was:");
             Trace.WriteLine(text);
 
-            Assert.AreEqual(expectedtext.Replace(" ", "").Replace(Environment.NewLine, "").ToLower(), text.Replace(" ", "").Replace("\n", "").ToLower(), "OCR doesn't match");
+            Assert.AreEqual(expectedtext, text, "OCR doesn't match");
         }
 
         [TestMethod]
         public void SkewTest10Degreelockwise()
         {
-            string expectedtext = @"This is a lot of 12 point text to test the ocr code and see if it works on all types
-    of file format.
-    The quick brown dog jumped over the
-    lazy fox. The quick brown dog jumped
-    over the lazy fox. The quick brown dog
-    Jumped over the lazy fox. The quick
-    brown dog jumped over the lazy fox.";
+            string expectedtext = "This is a lot of 12 point text to test the\n" +
+                        "ocr code and see if it works on all types\n" +
+                        "of file format." + "\n\n" +
+                        "The quick brown dog jumped over the" + "\n" +
+                        "lazy fox. The quick brown dog jumped" + "\n" +
+                        "over the lazy fox. The quick brown dog" + "\n" +
+                        "jumped over the lazy fox. The quick" + "\n" +
+                        "brown dog jumped over the lazy fox." + "\n";
 
             TesseractOCR TessOCR = new TesseractOCR("eng", TesseractOCR.Quality.High);
 
@@ -76,7 +78,7 @@ namespace TesseractPluginTest
             Trace.WriteLine("Output of OCR was:");
             Trace.WriteLine(text);
 
-            Assert.AreEqual(expectedtext.Replace(" ", "").Replace(Environment.NewLine, "").ToLower(), text.Replace(" ", "").Replace("\n", "").ToLower(), "OCR doesn't match");
+            Assert.AreEqual(expectedtext, text, "OCR doesn't match");
         }
     }
 }
