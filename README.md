@@ -2,7 +2,7 @@
 
 [![Windows Build](https://github.com/JakeTrans/TesseractOCRPlugin/actions/workflows/WindowsBuild.yml/badge.svg?branch=master)](https://github.com/JakeTrans/TesseractOCRPlugin/actions/workflows/WindowsBuild.yml)
 
-Tesseract OCR (5.0) with IronDrawing and Emgu CV to improve quality and Compatibility
+Tesseract OCR (5.0) with IronDrawing and Emgu CV to improve quality and Compatibility  (please inculde Emgu.CV.runtime for your build in the project referencing the library) 
 
 (Please note I've done this to make things work better for cross platform , I've kept a branch with the Accord Version)
 
