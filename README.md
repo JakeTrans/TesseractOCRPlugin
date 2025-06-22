@@ -7,7 +7,7 @@ Tesseract OCR (5.0) with IronDrawing and Emgu CV to improve quality and Compatib
 (Please note I've done this to make things work better for cross platform , I've kept a branch with the Accord Version)
 
 
-This is a implemention of Charles Weld's Tesseract dot.net wrapper https://github.com/charlesw/tesseract along with the  to 
+This is a implemention of Charles Weld's Tesseract dot.net wrapper https://github.com/charlesw/tesseract along with
 Emgu CV create a OCR engine with automated image enhancement.  
 
 
